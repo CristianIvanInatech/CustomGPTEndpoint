@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  
 import os
 
 app = Flask(__name__)
+CORS(app)  # Add this line to enable CORS for all routes
 
 @app.route('/echo', methods=['GET'])
 def echo():
