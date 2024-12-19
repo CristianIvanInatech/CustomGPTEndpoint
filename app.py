@@ -7,18 +7,7 @@ CORS(app)
 
 @app.route('/echo', methods=['GET'])
 def echo():
-    
     text = request.args.get('text', default="No text provided")
-    
-    
-    try:
-        with open('medical_details.txt', 'a', encoding='utf-8') as file:
-            file.write(text + '\n')
-    except Exception as e:
-        print(f"Error writing to file: {e}")
-        return jsonify({"error": "Could not save data"}), 500
-    
-
     return jsonify({"response": "Datele au fost verificate"})
 
 if __name__ == '__main__':
