@@ -5,8 +5,8 @@ import os
 app = Flask(__name__)
 CORS(app)  
 
-@app.route('/echo', methods=['GET'])
-def echo():
+@app.route('/verification', methods=['GET'])
+def verification():
     text = request.args.get('text', default="No text provided")
     return jsonify({"response": "Datele au fost verificate"})
 
